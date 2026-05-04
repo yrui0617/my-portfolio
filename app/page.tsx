@@ -1,8 +1,12 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import GlowCursor from "@/components/GlowCursor";
 import Image from "next/image";
-import { FaJava, FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaReact, FaVuejs, FaBootstrap, FaGithub, FaDocker, FaPhoneAlt, FaEnvelope, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaArrowUp, FaBars, FaTimes, FaJava, FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaReact, FaVuejs, FaBootstrap, FaGithub, FaDocker, FaPhoneAlt, FaEnvelope, FaFacebook, FaLinkedin } from "react-icons/fa";
 import { SiTailwindcss, SiSpringboot, SiNuxt, SiNextdotjs, SiDart, SiPython, SiIntellijidea, SiMysql, SiPostman, SiXampp, SiFlutter } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
+import { CiLocationOn } from "react-icons/ci";
 
 const skills = [
   { name: "Java", icon: <FaJava className="text-orange-500 text-2xl" /> },
@@ -50,30 +54,128 @@ function SectionGlow({ className }: { className: string }) {
   );
 }
 
+function ScrollToTopButton() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  if (!visible) return null;
+
+  return (
+    <button
+      onClick={scrollToTop}
+      className="fixed bottom-6 right-6 z-50 
+                 bg-white/10 backdrop-blur-xl border border-white/20
+                 text-white p-3 rounded-full
+                 hover:scale-110 hover:bg-white/20 transition"
+    >
+      <FaArrowUp />
+    </button>
+  );
+}
+
+function MobileMenu() {
+  const [open, setOpen] = useState(false);
+
+  const toggleMenu = () => setOpen(!open);
+
+  return (
+    <>
+      {/* BUTTON */}
+      <button
+        className="md:hidden xl:hidden text-white text-xl"
+        onClick={toggleMenu}
+      >
+        <FaBars />
+      </button>
+
+      {/* OVERLAY */}
+      {open && (
+        <div
+          className="md:hidden fixed inset-0 bg-black/50 z-40"
+          onClick={toggleMenu}
+        />
+      )}
+
+      {/* SIDEBAR */}
+      <div
+        className={`md:hidden xl:hidden fixed top-0 right-0 h-full w-72
+        bg-black backdrop-blur-2xl border-l border-white/10
+        shadow-2xl z-50 transform transition-transform duration-300
+        ${open ? "translate-x-0" : "translate-x-full"}`}
+      >
+
+        {/* CLOSE BUTTON */}
+        <div className="flex justify-end p-4">
+          <button onClick={toggleMenu} className="text-white text-xl">
+            <FaTimes />
+          </button>
+        </div>
+
+        {/* LINKS */}
+        <div className="flex flex-col space-y-6 p-6 text-gray-300 bg-black">
+          <a href="#about" onClick={toggleMenu}>About</a>
+          <a href="#languages" onClick={toggleMenu}>Languages</a>
+          <a href="#education" onClick={toggleMenu}>Education</a>
+          <a href="#skills" onClick={toggleMenu}>Skills</a>
+          <a href="#techstack" onClick={toggleMenu}>Tech Stack</a>
+          <a href="#tools" onClick={toggleMenu}>Tools</a>
+          <a href="#projects" onClick={toggleMenu}>Projects</a>
+        </div>
+
+      </div>
+    </>
+  );
+}
+
 export default function Home() {
   return (
     <main className="relative isolate overflow-hidden bg-black text-white scroll-smooth">
       <GlowCursor />
+      <ScrollToTopButton />
 
       <div className="relative z-10 overflow-hidden">
 
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full z-50">
+  
         <div className="max-w-6xl mx-auto px-6 py-4 mt-4 flex justify-between items-center
                         bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl">
+
           <h1 className="font-semibold tracking-wide">My Portfolio</h1>
-          <div className="space-x-6 text-sm text-gray-300">
-            <a href="#about" className="hover:text-white transition">About</a>
-            <a href="#languages" className="hover:text-white transition">Languages</a>
-            <a href="#education" className="hover:text-white transition">Education</a>
-            <a href="#skills" className="hover:text-white transition">Skills</a>
-            <a href="#techstack" className="hover:text-white transition">Tech Stack</a>
-            <a href="#tools" className="hover:text-white transition">Tools</a>
-            <a href="#projects" className="hover:text-white transition">Projects</a>
-            <a href="#contact" className="inline-block px-6 py-3 rounded-full bg-white 
-            text-black hover:scale-105 transition">
-                Contact</a>
+
+          {/* DESKTOP MENU */}
+          <div className="hidden md:flex space-x-6 text-sm text-gray-300">
+            <a href="#about" className="hover:text-white">About</a>
+            <a href="#languages" className="hover:text-white">Languages</a>
+            <a href="#education" className="hover:text-white">Education</a>
+            <a href="#skills" className="hover:text-white">Skills</a>
+            <a href="#techstack" className="hover:text-white">Tech Stack</a>
+            <a href="#tools" className="hover:text-white">Tools</a>
+            <a href="#projects" className="hover:text-white">Projects</a>
           </div>
+
+          {/* MOBILE BUTTON */}
+          <MobileMenu />
+
         </div>
       </nav>
 
@@ -87,13 +189,14 @@ export default function Home() {
             <Image
               src="/profile.jpg"
               alt="Profile"
-              fill
+              width={224}
+              height={224}
               className="object-cover"
             />
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-semibold tracking-tight">
-            Building clean <br /> digital experiences
+            Passionate to be <br/>a software engineer
           </h1>
 
           <p className="text-gray-400 max-w-xl text-lg">
@@ -101,24 +204,24 @@ export default function Home() {
           </p>
 
           <a
-            href="#projects"
+            href="#contact"
             className="inline-block px-6 py-3 rounded-full bg-white text-black 
                       hover:scale-105 transition"
           >
-            View Work
+            Contact Me
           </a>
 
         </div>
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="relative isolate bg-white/5 border border-white/10 backdrop-blur-xl m-auto max-w-3xl my-32
+      <section id="about" className="relative isolate scroll-mt-32 bg-white/5 border border-white/10 backdrop-blur-xl m-auto max-w-3xl my-32
         rounded-2xl p-4 text-center transition
         hover:scale-105 hover:border-white/20 
         hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]">
         <SectionGlow className="left-1/10 top-1 -translate-x-1/2 -translate-y-1/2 bg-cyan-500" />
         <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8">
-          <h2 className="text-2xl font-semibold mb-4">About</h2>
+          <h2 className="text-2xl font-semibold mb-4">About Me</h2>
 
           <p className="text-gray-400 leading-relaxed">
             I am an IT student currently semester 6 and studying at UUM (Utara University Malaysia), 
@@ -150,7 +253,7 @@ export default function Home() {
             <div className="bg-white/5 border border-white/10 backdrop-blur-xl 
                             rounded-2xl p-5 text-center hover:scale-105 transition">
               <p className="text-lg font-medium">Malay</p>
-              <p className="text-xs text-gray-500 mt-1">Intermediate</p>
+              <p className="text-xs text-gray-500 mt-1">Advanced</p>
             </div>
           </div>
         </div>
@@ -169,8 +272,12 @@ export default function Home() {
               <h3 className="text-lg font-semibold">
                 Sijil Tinggi Persekolahan Malaysia (STPM)
               </h3>
+              <div className="flex items-center gap-2 text-gray-400 text-sm mt-1">
+                <CiLocationOn />
+                <span>SMK Tinggi BATU PAHAT</span>
+              </div>
               <p className="text-gray-400 text-sm mt-1">
-                Arts Stream · 2023
+                 Arts Stream · 2023
               </p>
               <p className="text-white mt-2">
                 CGPA: 4.00
@@ -182,6 +289,10 @@ export default function Home() {
               <h3 className="text-lg font-semibold">
                 Bachelor of Science (Hons) in Information Technology
               </h3>
+              <div className="flex items-center gap-2 text-gray-400 text-sm mt-1">
+              <CiLocationOn />
+              <span>Utara University Malaysia</span>
+            </div>
               <p className="text-gray-400 text-sm mt-1">
                 2023 – Present
               </p>
@@ -217,7 +328,7 @@ export default function Home() {
       </section>
 
       {/* TECH STACK */}
-      <section id="skills" className="relative isolate py-20 md:py-32 px-6">
+      <section id="techstack" className="relative isolate py-20 md:py-32 px-6">
         <SectionGlow className="left-[-80px] top-24 bg-violet-500" />
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl font-semibold mb-10">Tech Stack</h2>
@@ -304,16 +415,30 @@ export default function Home() {
           <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:scale-[1.02] transition">
             <h3 className="text-lg font-semibold">Financial System with AI Chatbot</h3>
             <p className="text-gray-400 mt-2">
-              A financial management system integrated with an AI chatbot for customer support.
+              A financial system integrated with an AI chatbot, the AI chatbot can answer common financial 
+              questions by provide the financial data that belong to the user. It&apos;s a full-stack 
+              project built with Nuxt.js (Vue as frontend ; Nitro as backend for the system 
+              and Python as backend for the AI chatbot) and tailwind CSS.
             </p>
           </div>
 
           <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:scale-[1.02] transition">
             <h3 className="text-lg font-semibold">My Portfolio</h3>
             <p className="text-gray-400 mt-2">
-              A personal portfolio website to showcase my skills and projects. Built with Next.js and Tailwind CSS, 
-              it features a modern design and responsive layout to provide an optimal viewing experience across devices.
+              A personal portfolio website to showcase my skills and projects. It&apos;s a full-stack project built with 
+              Next.js(React frontend, Node.js backend) and Tailwind CSS, it features a modern design and responsive 
+              layout to provide an optimal viewing experience across devices.
             </p>
+            <a
+              href="https://github.com/yrui0617/my-portfolio.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full m-auto mt-4
+                        bg-white text-black hover:scale-105 transition"
+            >
+              <FaGithub />
+              GitHub
+            </a>
           </div>    
 
           <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:scale-[1.02] transition">
@@ -322,21 +447,38 @@ export default function Home() {
               This is a language learning web application designed to 
               help users learn and practice new languages (Chinese, Malay) 
               in an interactive. It&apos;s a full-stack project built with HTML,
-               CSS, JavaScript and Spring Boot backend. For this project, Spring Boot backend serves as the REST API that handles all business logic, database operations, and user management for this language learning platform.
+               CSS, JavaScript and Spring Boot backend.
             </p>
-
             <a
               href="https://github.com/yrui0617/Golanguage_Localhost.git"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-5 py-2 rounded-full m-auto mt-4
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full m-auto mt-4
                         bg-white text-black hover:scale-105 transition"
             >
               <FaGithub />
               GitHub
             </a>
-
           </div>
+
+          <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:scale-[1.02] transition">
+            <h3 className="text-lg font-semibold">Worker Task Management System</h3>
+            <p className="text-gray-400 mt-2">
+              A full-stack mobile application built with Flutter/Dart 
+              and PHP backend that enables workers to manage task assignments, 
+              submit work, and track submission history. 
+            </p>
+            <a
+              href="https://github.com/yrui0617/FinalAssignment.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full m-auto mt-4
+                        bg-white text-black hover:scale-105 transition"
+            >
+              <FaGithub />
+              GitHub
+            </a>
+          </div>    
         </div>
       </section>
 
@@ -371,16 +513,6 @@ export default function Home() {
             >
               <FaGithub />
               GitHub
-            </a>
-            <a
-              href="https://www.facebook.com/share/1HHMD9NugN/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full 
-                        bg-white text-black hover:scale-105 transition"
-            >
-              <FaFacebook />
-              Facebook
             </a>
             <a
               href="https://www.linkedin.com/in/yin-rui-tan-792275326?utm_source=share_via&utm_content=profile&utm_medium=member_android"
