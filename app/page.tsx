@@ -64,7 +64,11 @@ export default function Home() {
           <h1 className="font-semibold tracking-wide">My Portfolio</h1>
           <div className="space-x-6 text-sm text-gray-300">
             <a href="#about" className="hover:text-white transition">About</a>
+            <a href="#languages" className="hover:text-white transition">Languages</a>
+            <a href="#education" className="hover:text-white transition">Education</a>
             <a href="#skills" className="hover:text-white transition">Skills</a>
+            <a href="#techstack" className="hover:text-white transition">Tech Stack</a>
+            <a href="#tools" className="hover:text-white transition">Tools</a>
             <a href="#projects" className="hover:text-white transition">Projects</a>
             <a href="#contact" className="inline-block px-6 py-3 rounded-full bg-white 
             text-black hover:scale-105 transition">
