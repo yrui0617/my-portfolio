@@ -2,7 +2,7 @@
 Welcome to my personal portfolio website! This project showcases my work, skills, and experience as a developer.
 
 # 🌐 Live Demo
-Check out the live portfolio: [your-domain.com](https://my-portfolio-yrui.vercel.app/)
+Check out the live portfolio: [My_Portfolio](https://my-portfolio-yrui.vercel.app/)
 
 # 📋 About
 This is a modern, responsive portfolio built with Next.js and deployed on Vercel. It features:
