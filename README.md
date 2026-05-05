@@ -12,7 +12,7 @@ This is a modern, responsive portfolio built with Next.js and deployed on Vercel
 - 📱 Mobile-Friendly - Fully responsive across all devices
 - ✨ Interactive Elements - Smooth animations and transitions
 
-#🚀 Getting Started
+# 🚀 Getting Started
 **Prerequisites**
 - Node.js 18+
 - npm, yarn, pnpm, or bun
