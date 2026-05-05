@@ -17,8 +17,9 @@ This is a modern, responsive portfolio built with Next.js and deployed on Vercel
 - Node.js 18+
 - npm, yarn, pnpm, or bun
 
-**Installation**
-``bash
+## 📦 Installation
+
+```bash
 # Clone the repository
 git clone https://github.com/yrui0617/my-portfolio.git
 cd my-portfolio
@@ -29,9 +30,12 @@ npm install
 yarn install
 # or
 pnpm install
-``
-#Development Server
-``bash
+# or
+bun install
+```
+
+# Development Server
+```bash
 npm run dev
 # or
 yarn dev
@@ -39,11 +43,11 @@ yarn dev
 pnpm dev
 # or
 bun dev
-``
+```
 Open http://localhost:3000 with your browser to see the result. The page auto-updates as you edit app/page.tsx.
 
 # 📁 Project Structure
-``
+```
 my-portfolio/
 ├── app/
 │   ├── page.tsx          # Main portfolio page
@@ -52,7 +56,7 @@ my-portfolio/
 ├── public/               # Static assets
 ├── styles/               # CSS modules
 └── components/           # React components
-``
+```
 # 🛠️ Tech Stack
 - Framework: Next.js
 - Styling: Geist Font
