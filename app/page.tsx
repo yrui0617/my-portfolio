@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import GlowCursor from "@/components/GlowCursor";
 import Image from "next/image";
 import { FaDownload, FaArrowUp, FaBars, FaTimes, FaJava, FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaReact, FaVuejs, FaBootstrap, FaGithub, FaDocker, FaPhoneAlt, FaEnvelope, FaFacebook, FaLinkedin } from "react-icons/fa";
-import { SiTailwindcss, SiSpringboot, SiNuxt, SiNextdotjs, SiDart, SiPython, SiIntellijidea, SiMysql, SiPostman, SiXampp, SiFlutter } from "react-icons/si";
+import { SiTailwindcss, SiSpringboot, SiNuxt, SiNextdotjs, SiDart, SiPython, SiIntellijidea, SiMysql, SiPostman, SiXampp, SiFlutter, SiPhp } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { CiLocationOn } from "react-icons/ci";
 
@@ -15,7 +15,8 @@ const skills = [
   { name: "CSS", icon: <FaCss3Alt className="text-blue-500 text-2xl" /> },
   { name: "JavaScript", icon: <FaJs className="text-yellow-400 text-2xl" /> },
   { name: "Dart", icon: <SiDart className="text-sky-400 text-2xl" /> },
-  { name: "Python", icon: <SiPython className="text-green-400 text-2xl" /> }, 
+  { name: "Python", icon: <SiPython className="text-green-400 text-2xl" /> },
+  { name: "PHP", icon: <SiPhp className="text-blue-400 text-2xl" /> },
 ];
 
 const techStack = {
