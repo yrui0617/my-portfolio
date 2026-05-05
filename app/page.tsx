@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import GlowCursor from "@/components/GlowCursor";
 import Image from "next/image";
-import { FaArrowUp, FaBars, FaTimes, FaJava, FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaReact, FaVuejs, FaBootstrap, FaGithub, FaDocker, FaPhoneAlt, FaEnvelope, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaDownload, FaArrowUp, FaBars, FaTimes, FaJava, FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaReact, FaVuejs, FaBootstrap, FaGithub, FaDocker, FaPhoneAlt, FaEnvelope, FaFacebook, FaLinkedin } from "react-icons/fa";
 import { SiTailwindcss, SiSpringboot, SiNuxt, SiNextdotjs, SiDart, SiPython, SiIntellijidea, SiMysql, SiPostman, SiXampp, SiFlutter } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { CiLocationOn } from "react-icons/ci";
@@ -183,8 +183,8 @@ export default function Home() {
       <section className="relative isolate min-h-screen flex items-center justify-center text-center px-6 pt-24">
         <SectionGlow className="left-[-90px] top-1/3 bg-blue-500" />
         <SectionGlow className="right-[-90px] top-1/2 bg-purple-500" />
-        <div className="space-y-6 flex flex-col items-center">
 
+        <div className="space-y-6 flex flex-col items-center">
           <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border border-white/10">
             <Image
               src="/profile.jpg"
@@ -210,7 +210,6 @@ export default function Home() {
           >
             Contact Me
           </a>
-
         </div>
       </section>
 
@@ -277,11 +276,25 @@ export default function Home() {
                 <span>SMK Tinggi BATU PAHAT</span>
               </div>
               <p className="text-gray-400 text-sm mt-1">
-                 Arts Stream · 2023
+                 Arts Stream · 2022
               </p>
-              <p className="text-white mt-2">
-                CGPA: 4.00
-              </p>
+              
+              <div className="flex justify-between gap-4 mt-2">
+                <p className="text-white mt-2">
+                  CGPA: 4.00
+                </p>
+
+                <a
+                  href="/STPM_Certificate.pdf"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition"
+                >
+                  <FaDownload className="text-gray-400" />
+                  Download CGPA Transcript
+                </a>
+              </div>
             </div>
 
             {/* Degree */}
@@ -289,18 +302,33 @@ export default function Home() {
               <h3 className="text-lg font-semibold">
                 Bachelor of Science (Hons) in Information Technology
               </h3>
+
               <div className="flex items-center gap-2 text-gray-400 text-sm mt-1">
-              <CiLocationOn />
-              <span>Utara University Malaysia</span>
-            </div>
+                <CiLocationOn />
+                <span>Utara University Malaysia</span>
+              </div>
+
               <p className="text-gray-400 text-sm mt-1">
                 2023 – Present
               </p>
-              <p className="text-white mt-2">
-                CGPA (Sem 1–5): 3.80
-              </p>
-            </div>
 
+              <div className="flex justify-between gap-4 mt-2">
+                <p className="text-white mt-2">
+                  CGPA (Sem 1-5): 3.80
+                </p>
+
+                <a
+                  href="/CourseListedperProgrammeStructure.pdf"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition"
+                >
+                  <FaDownload className="text-gray-400" />
+                  Download CGPA Transcript
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -384,6 +412,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TOOLS */}
       <section id="tools" className="relative isolate py-20 md:py-32 px-6">
         <SectionGlow className="right-[-80px] bottom-16 bg-sky-500" />
         <div className="max-w-5xl mx-auto">
@@ -412,7 +441,9 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-8">Projects</h2>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:scale-[1.02] transition">
+        
+          {/* PROJECT 1 */}    
+          <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:scale-[1.02] transition flex flex-col">
             <h3 className="text-lg font-semibold">Financial System with AI Chatbot</h3>
             <p className="text-gray-400 mt-2">
               A financial system integrated with an AI chatbot, the AI chatbot can answer common financial 
@@ -422,26 +453,30 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:scale-[1.02] transition">
+          {/* PROJECT 2 */}    
+          <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:scale-[1.02] transition flex flex-col">
             <h3 className="text-lg font-semibold">My Portfolio</h3>
             <p className="text-gray-400 mt-2">
               A personal portfolio website to showcase my skills and projects. It&apos;s a full-stack project built with 
-              Next.js(React frontend, Node.js backend) and Tailwind CSS, it features a modern design and responsive 
+              Next.js and Tailwind CSS, it features a modern design and responsive 
               layout to provide an optimal viewing experience across devices.
             </p>
-            <a
-              href="https://github.com/yrui0617/my-portfolio.git"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full m-auto mt-4
-                        bg-white text-black hover:scale-105 transition"
-            >
-              <FaGithub />
-              GitHub
-            </a>
+            <div className="mt-auto pt-4 flex justify-center">
+              <a
+                href="https://github.com/yrui0617/my-portfolio.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-full m-auto mt-4
+                          bg-white text-black hover:scale-105 transition"
+              >
+                <FaGithub />
+                GitHub
+              </a>
+            </div>
           </div>    
 
-          <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:scale-[1.02] transition">
+          {/* PROJECT 3 */}    
+          <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:scale-[1.02] transition flex flex-col">
             <h3 className="text-lg font-semibold">Golanguage</h3>
             <p className="text-gray-400 mt-2">
               This is a language learning web application designed to 
@@ -449,35 +484,40 @@ export default function Home() {
               in an interactive. It&apos;s a full-stack project built with HTML,
                CSS, JavaScript and Spring Boot backend.
             </p>
-            <a
-              href="https://github.com/yrui0617/Golanguage_Localhost.git"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full m-auto mt-4
-                        bg-white text-black hover:scale-105 transition"
-            >
-              <FaGithub />
-              GitHub
-            </a>
+            <div className="mt-auto pt-4 flex justify-center">
+              <a
+                href="https://github.com/yrui0617/Golanguage_Localhost.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-full m-auto mt-4
+                          bg-white text-black hover:scale-105 transition"
+              >
+                <FaGithub />
+                GitHub
+              </a>
+            </div>
           </div>
 
-          <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:scale-[1.02] transition">
+          {/* PROJECT 4 */}    
+          <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:scale-[1.02] transition flex flex-col">
             <h3 className="text-lg font-semibold">Worker Task Management System</h3>
             <p className="text-gray-400 mt-2">
               A full-stack mobile application built with Flutter/Dart 
               and PHP backend that enables workers to manage task assignments, 
               submit work, and track submission history. 
             </p>
-            <a
-              href="https://github.com/yrui0617/FinalAssignment.git"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full m-auto mt-4
+            <div className="mt-auto pt-4 flex justify-center">
+              <a
+                href="https://github.com/yrui0617/FinalAssignment.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-full m-auto mt-4
                         bg-white text-black hover:scale-105 transition"
-            >
-              <FaGithub />
-              GitHub
-            </a>
+              >
+                <FaGithub />
+                GitHub
+              </a>
+            </div>
           </div>    
         </div>
       </section>
@@ -490,7 +530,6 @@ export default function Home() {
           <h2 className="text-2xl font-semibold">Contact Me</h2>
 
           <div className="space-y-3 text-sm text-gray-300">
-
             <div className="flex items-center gap-3">
               <FaPhoneAlt className="text-green-400" />
               <span>+6011-5507 5896</span>
@@ -500,9 +539,9 @@ export default function Home() {
               <FaEnvelope className="text-red-400" />
               <span>richard020617@gmail.com</span>
             </div>
-
           </div>
-          
+
+          {/* SOCIAL */}
           <div className="flex items-center gap-4 mt-6">
             <a
               href="https://github.com/yrui0617"
