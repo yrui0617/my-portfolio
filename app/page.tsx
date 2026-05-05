@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import GlowCursor from "@/components/GlowCursor";
 import Image from "next/image";
-import { FaDownload, FaArrowUp, FaBars, FaTimes, FaJava, FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaReact, FaVuejs, FaBootstrap, FaGithub, FaDocker, FaPhoneAlt, FaEnvelope, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaDownload, FaArrowUp, FaBars, FaTimes, FaJava, FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaReact, FaVuejs, FaBootstrap, FaGithub, FaDocker, FaPhoneAlt, FaEnvelope, FaLinkedin } from "react-icons/fa";
 import { SiTailwindcss, SiSpringboot, SiNuxt, SiNextdotjs, SiDart, SiPython, SiIntellijidea, SiMysql, SiPostman, SiXampp, SiFlutter, SiPhp } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { CiLocationOn } from "react-icons/ci";
@@ -93,61 +93,15 @@ function ScrollToTopButton() {
   );
 }
 
-function MobileMenu() {
-  const [open, setOpen] = useState(false);
-
-  const toggleMenu = () => setOpen(!open);
-
-  return (
-    <>
-      {/* BUTTON */}
-      <button
-        className="md:hidden xl:hidden text-white text-xl"
-        onClick={toggleMenu}
-      >
-        <FaBars />
-      </button>
-
-      {/* OVERLAY */}
-      {open && (
-        <div
-          className="md:hidden fixed inset-0 bg-black/50 z-40"
-          onClick={toggleMenu}
-        />
-      )}
-
-      {/* SIDEBAR */}
-      <div
-        className={`md:hidden xl:hidden fixed top-0 right-0 h-full w-72
-        bg-black backdrop-blur-2xl border-l border-white/10
-        shadow-2xl z-50 transform transition-transform duration-300
-        ${open ? "translate-x-0" : "translate-x-full"}`}
-      >
-
-        {/* CLOSE BUTTON */}
-        <div className="flex justify-end p-4">
-          <button onClick={toggleMenu} className="text-white text-xl">
-            <FaTimes />
-          </button>
-        </div>
-
-        {/* LINKS */}
-        <div className="flex flex-col space-y-6 p-6 text-gray-300 bg-black">
-          <a href="#about" onClick={toggleMenu}>About</a>
-          <a href="#languages" onClick={toggleMenu}>Languages</a>
-          <a href="#education" onClick={toggleMenu}>Education</a>
-          <a href="#skills" onClick={toggleMenu}>Skills</a>
-          <a href="#techstack" onClick={toggleMenu}>Tech Stack</a>
-          <a href="#tools" onClick={toggleMenu}>Tools</a>
-          <a href="#projects" onClick={toggleMenu}>Projects</a>
-        </div>
-
-      </div>
-    </>
-  );
-}
 
 export default function Home() {
+  const [open, setOpen] = useState(false); 
+  const toggleMenu = () => setOpen(!open)
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "auto";
+  }, [open]);
+
   return (
     <main className="relative isolate overflow-hidden bg-black text-white scroll-smooth">
       <GlowCursor />
@@ -168,6 +122,7 @@ export default function Home() {
             <a href="#about" className="hover:text-white">About</a>
             <a href="#languages" className="hover:text-white">Languages</a>
             <a href="#education" className="hover:text-white">Education</a>
+            <a href="#certificate" className="hover:text-white">Certificate</a>
             <a href="#skills" className="hover:text-white">Skills</a>
             <a href="#techstack" className="hover:text-white">Tech Stack</a>
             <a href="#tools" className="hover:text-white">Tools</a>
@@ -175,11 +130,83 @@ export default function Home() {
           </div>
 
           {/* MOBILE BUTTON */}
-          <MobileMenu />
+          <button
+            className="md:hidden text-white text-xl"
+            onClick={toggleMenu}
+          >
+            <FaBars />
+          </button>
 
         </div>
       </nav>
+      {/* OVERLAY */}
+      {open && (
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+          onClick={toggleMenu}
+        />
+      )}
 
+      {/* SIDEBAR */}
+      <div
+        className={`fixed top-0 right-0 h-full w-72
+        bg-white/10 backdrop-blur-2xl border-l border-white/10
+        shadow-2xl z-50 transform transition-transform duration-300 
+        ${open ? "translate-x-0" : "translate-x-full"}`}
+      >
+        {/* CLOSE BUTTON */}
+        <div className="flex justify-end p-4">
+          <button onClick={toggleMenu} className="text-white text-xl">
+            <FaTimes />
+          </button>
+        </div>
+
+        {/* LINKS */}
+        <div className="flex flex-col space-y-6 p-6 text-gray-300">
+          <a
+            href="#about"
+            onClick={toggleMenu}
+            className="block w-full px-4 py-3 rounded-lg transition
+                    hover:bg-white/5 hover:shadow-[0_0_25px  _rgba(255,255,255,0.1)]"
+          >
+            About</a>
+          <a href="#languages" 
+            onClick={toggleMenu} 
+            className="block w-full px-4 py-3 rounded-lg transition
+                    hover:bg-white/5 hover:shadow-[0_0_25px  _rgba(255,255,255,0.1)]">
+            Languages</a>
+          <a href="#education" 
+          onClick={toggleMenu} 
+          className="block w-full px-4 py-3 rounded-lg transition
+                  hover:bg-white/5 hover:shadow-[0_0_25px  _rgba(255,255,255,0.1)]">
+            Education</a>
+          <a href="#certificate" onClick={toggleMenu} className="block w-full px-4 py-3 rounded-lg transition
+             hover:bg-white/5 hover:shadow-[0_0_25px  _rgba(255,255,255,0.1)]">
+            Certificate</a>
+          <a href="#skills" 
+          onClick={toggleMenu} 
+          className="block w-full px-4 py-3 rounded-lg transition
+                  hover:bg-white/5 hover:shadow-[0_0_25px  _rgba(255,255,255,0.1)]">
+            Skills</a>
+          <a href="#techstack" 
+          onClick={toggleMenu} 
+          className="block w-full px-4 py-3 rounded-lg transition
+                  hover:bg-white/5 hover:shadow-[0_0_25px  _rgba(255,255,255,0.1)]">
+            Tech Stack</a>
+          <a href="#tools" 
+          onClick={toggleMenu} 
+          className="block w-full px-4 py-3 rounded-lg transition
+                  hover:bg-white/5 hover:shadow-[0_0_25px  _rgba(255,255,255,0.1)]">
+            Tools</a>
+          <a href="#projects" 
+          onClick={toggleMenu} 
+          className="block w-full px-4 py-3 rounded-lg transition
+                  hover:bg-white/5 hover:shadow-[0_0_25px  _rgba(255,255,255,0.1)]">
+            Projects</a>
+        </div>
+
+      </div>
+      
       {/* HERO */}
       <section className="relative isolate min-h-screen flex items-center justify-center text-center px-6 pt-24">
         <SectionGlow className="left-[-90px] top-1/3 bg-blue-500" />
@@ -330,6 +357,36 @@ export default function Home() {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certificate */}
+      <section id="certificate" className="relative isolate py-20 md:py-32 px-6">
+        <SectionGlow className="left-[-80px] top-16 bg-yellow-500" />
+
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-semibold mb-8">Certificate</h2>
+          
+          <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6">
+            <h3 className="text-lg font-semibold">
+              CCNA: Introduction to Networks Certificate
+            </h3>
+             <a
+              href="/CCNA_Certificate.pdf"
+              download
+              target="_blank"
+              className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition mt-2"
+            >
+              <FaDownload className="text-gray-400" />
+              Download Certificate
+            </a>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 mt-6">
+            <h3 className="text-lg font-semibold">
+              Dean List Certificate (Semester 2-5)
+            </h3>
           </div>
         </div>
       </section>
