@@ -1,9 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Portfolio
+Welcome to my personal portfolio website! This project showcases my work, skills, and experience as a developer.
 
-## Getting Started
+# 🌐 Live Demo
+Check out the live portfolio: [My_Portfolio](https://my-portfolio-yrui.vercel.app/)
 
-First, run the development server:
+# 📋 About
+This is a modern, responsive portfolio built with Next.js and deployed on Vercel. It features:
 
+- ⚡ Fast & Optimized - Built with Next.js for optimal performance
+- 🎨 Modern Design - Clean, professional UI with responsive layout
+- 📱 Mobile-Friendly - Fully responsive across all devices
+- ✨ Interactive Elements - Smooth animations and transitions
+
+# 🚀 Getting Started
+**Prerequisites**
+- Node.js 18+
+- npm, yarn, pnpm, or bun
+
+## 📦 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yrui0617/my-portfolio.git
+cd my-portfolio
+
+# Install dependencies
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+# Development Server
 ```bash
 npm run dev
 # or
@@ -13,24 +44,25 @@ pnpm dev
 # or
 bun dev
 ```
+Open http://localhost:3000 with your browser to see the result. The page auto-updates as you edit app/page.tsx.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 📁 Project Structure
+```
+my-portfolio/
+├── app/
+│   ├── page.tsx          # Main portfolio page
+│   ├── layout.tsx        # Root layout
+│   └── ...
+├── public/               # Static assets
+├── styles/               # CSS modules
+└── components/           # React components
+```
+# 🛠️ Tech Stack
+- Framework: Next.js
+- Styling: Geist Font
+- Deployment: Vercel
+- Language: TypeScript
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 💬 Contact
+- Email: richard020617@gmail.com
+- Tel : 011-5507 5896
