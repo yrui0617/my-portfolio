@@ -1,10 +1,10 @@
-# My Portfolio
+## My Portfolio
 Welcome to my personal portfolio website! This project showcases my work, skills, and experience as a developer.
 
-# 🌐 Live Demo
+## 🌐 Live Demo
 Check out the live portfolio: [My_Portfolio](https://my-portfolio-yrui.vercel.app/)
 
-# 📋 About
+## 📋 About
 This is a modern, responsive portfolio built with Next.js and deployed on Vercel. It features:
 
 - ⚡ Fast & Optimized - Built with Next.js for optimal performance
@@ -12,7 +12,7 @@ This is a modern, responsive portfolio built with Next.js and deployed on Vercel
 - 📱 Mobile-Friendly - Fully responsive across all devices
 - ✨ Interactive Elements - Smooth animations and transitions
 
-# 🚀 Getting Started
+## 🎯 Getting Started
 **Prerequisites**
 - Node.js 18+
 - npm, yarn, pnpm, or bun
@@ -34,7 +34,7 @@ pnpm install
 bun install
 ```
 
-# Development Server
+## 🚀 Development Server
 ```bash
 npm run dev
 # or
@@ -46,7 +46,7 @@ bun dev
 ```
 Open http://localhost:3000 with your browser to see the result. The page auto-updates as you edit app/page.tsx.
 
-# 📁 Project Structure
+## 📁 Project Structure
 ```
 my-portfolio/
 ├── app/
@@ -57,12 +57,12 @@ my-portfolio/
 ├── styles/               # CSS modules
 └── components/           # React components
 ```
-# 🛠️ Tech Stack
+## 🛠️ Tech Stack
 - Framework: Next.js
 - Styling: Geist Font
 - Deployment: Vercel
 - Language: TypeScript
 
-# 💬 Contact
+## 💬 Contact
 - Email: richard020617@gmail.com
 - Tel : 011-5507 5896
