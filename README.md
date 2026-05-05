@@ -2,7 +2,7 @@
 Welcome to my personal portfolio website! This project showcases my work, skills, and experience as a developer.
 
 # 🌐 Live Demo
-Check out the live portfolio: your-domain.com
+Check out the live portfolio: [your-domain.com](https://my-portfolio-yrui.vercel.app/)
 
 # 📋 About
 This is a modern, responsive portfolio built with Next.js and deployed on Vercel. It features:
@@ -58,9 +58,6 @@ my-portfolio/
 - Styling: Geist Font
 - Deployment: Vercel
 - Language: TypeScript
-
-# 🔗 Live Demo
-- https://my-portfolio-yrui.vercel.app/
 
 # 💬 Contact
 - Email: richard020617@gmail.com
