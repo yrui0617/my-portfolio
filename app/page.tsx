@@ -55,7 +55,7 @@ function SectionGlow({ className }: { className: string }) {
   );
 }
 
-function ScrollToTopButton() {
+function ScrollToTopButton({ hidden }: { hidden: boolean }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -78,12 +78,12 @@ function ScrollToTopButton() {
     });
   };
 
-  if (!visible) return null;
+  if (!visible || hidden) return null;
 
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-6 right-6 z-50 
+      className="fixed bottom-6 right-6 z-40 
                  bg-white/10 backdrop-blur-xl border border-white/20
                  text-white p-3 rounded-full
                  hover:scale-110 hover:bg-white/20 transition"
@@ -105,7 +105,7 @@ export default function Home() {
   return (
     <main className="relative isolate overflow-hidden bg-black text-white scroll-smooth">
       <GlowCursor />
-      <ScrollToTopButton />
+      <ScrollToTopButton hidden={open} />
 
       <div className="relative z-10 overflow-hidden">
 
@@ -142,7 +142,7 @@ export default function Home() {
       {/* OVERLAY */}
       {open && (
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
           onClick={toggleMenu}
         />
       )}
@@ -280,7 +280,7 @@ export default function Home() {
             <div className="bg-white/5 border border-white/10 backdrop-blur-xl 
                             rounded-2xl p-5 text-center hover:scale-105 transition">
               <p className="text-lg font-medium">Malay</p>
-              <p className="text-xs text-gray-500 mt-1">Advanced</p>
+              <p className="text-xs text-gray-500 mt-1">Intermediate</p>
             </div>
           </div>
         </div>
@@ -509,6 +509,18 @@ export default function Home() {
               project built with Nuxt.js (Vue as frontend ; Nitro as backend for the system 
               and Python as backend for the AI chatbot) and tailwind CSS.
             </p>
+            <div className="mt-auto pt-4 flex justify-center">
+              <a
+                href="https://github.com/yrui0617/Financial_Sys_AI_Chatbot.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-full m-auto mt-4
+                          bg-white text-black hover:scale-105 transition"
+              >
+                <FaGithub />
+                GitHub
+              </a>
+            </div>
           </div>
 
           {/* PROJECT 2 */}    
