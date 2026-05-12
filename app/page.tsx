@@ -624,7 +624,7 @@ export default function Home() {
               GitHub
             </a>
             <a
-              href="https://www.linkedin.com/in/yin-rui-tan-792275326?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              href="www.linkedin.com/in/tan-yin-rui-792275326"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2 rounded-full 
