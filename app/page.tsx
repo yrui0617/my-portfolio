@@ -122,7 +122,7 @@ export default function Home() {
             <a href="#about" className="hover:text-white">About</a>
             <a href="#languages" className="hover:text-white">Languages</a>
             <a href="#education" className="hover:text-white">Education</a>
-            <a href="#certificate" className="hover:text-white">Certificate</a>
+            <a href="#certification" className="hover:text-white">Certification</a>
             <a href="#skills" className="hover:text-white">Skills</a>
             <a href="#techstack" className="hover:text-white">Tech Stack</a>
             <a href="#tools" className="hover:text-white">Tools</a>
@@ -180,9 +180,9 @@ export default function Home() {
           className="block w-full px-4 py-3 rounded-lg transition
                   hover:bg-white/5 hover:shadow-[0_0_25px  _rgba(255,255,255,0.1)]">
             Education</a>
-          <a href="#certificate" onClick={toggleMenu} className="block w-full px-4 py-3 rounded-lg transition
+          <a href="#certification" onClick={toggleMenu} className="block w-full px-4 py-3 rounded-lg transition
              hover:bg-white/5 hover:shadow-[0_0_25px  _rgba(255,255,255,0.1)]">
-            Certificate</a>
+            Certification</a>
           <a href="#skills" 
           onClick={toggleMenu} 
           className="block w-full px-4 py-3 rounded-lg transition
@@ -361,12 +361,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Certificate */}
-      <section id="certificate" className="relative isolate py-20 md:py-32 px-6">
+      {/* Certification */}
+      <section id="certification" className="relative isolate py-20 md:py-32 px-6">
         <SectionGlow className="left-[-80px] top-16 bg-yellow-500" />
 
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-8">Certificate</h2>
+          <h2 className="text-2xl font-semibold mb-8">Certification</h2>
           
           <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6">
             <h3 className="text-lg font-semibold">
