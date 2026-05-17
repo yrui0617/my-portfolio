@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import GlowCursor from "@/components/GlowCursor";
 import Image from "next/image";
 import { FaDownload, FaArrowUp, FaBars, FaTimes, FaJava, FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaReact, FaVuejs, FaBootstrap, FaGithub, FaDocker, FaPhoneAlt, FaEnvelope, FaLinkedin } from "react-icons/fa";
-import { SiTailwindcss, SiSpringboot, SiNuxt, SiNextdotjs, SiDart, SiPython, SiIntellijidea, SiMysql, SiPostman, SiXampp, SiFlutter, SiPhp } from "react-icons/si";
+import { SiTailwindcss, SiSpringboot, SiFigma, SiNuxt, SiDart, SiPython, SiIntellijidea, SiMysql, SiPostman, SiXampp, SiFlutter, SiPhp } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { CiLocationOn } from "react-icons/ci";
 
@@ -14,9 +14,9 @@ const skills = [
   { name: "HTML", icon: <FaHtml5 className="text-orange-600 text-2xl" /> },
   { name: "CSS", icon: <FaCss3Alt className="text-blue-500 text-2xl" /> },
   { name: "JavaScript", icon: <FaJs className="text-yellow-400 text-2xl" /> },
-  { name: "Dart", icon: <SiDart className="text-sky-400 text-2xl" /> },
-  { name: "Python", icon: <SiPython className="text-green-400 text-2xl" /> },
   { name: "PHP", icon: <SiPhp className="text-blue-400 text-2xl" /> },
+  { name: "Python", icon: <SiPython className="text-green-400 text-2xl" /> },
+  { name: "Dart", icon: <SiDart className="text-sky-400 text-2xl" /> },
 ];
 
 const techStack = {
@@ -31,7 +31,6 @@ const techStack = {
     { name: "Nitro", icon: <SiNuxt className="text-green-400" /> }, // reuse Nuxt icon
   ],
   fullstack: [
-    { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
     { name: "Nuxt.js", icon: <SiNuxt className="text-green-400" /> },
   ],
 };
@@ -44,6 +43,7 @@ const tools = [
   { name: "Flutter", icon: <SiFlutter className="text-sky-400" /> },
   { name: "Postman", icon: <SiPostman className="text-orange-400" /> },
   { name: "XAMPP", icon: <SiXampp className="text-orange-500" /> },
+  { name: "Figma", icon: <SiFigma className="text-sky-400" /> },
 ];
 
 function SectionGlow({ className }: { className: string }) {
@@ -506,7 +506,7 @@ export default function Home() {
             <p className="text-gray-400 mt-2">
               A financial system integrated with an AI chatbot, the AI chatbot can answer common financial 
               questions by provide the financial data that belong to the user. It&apos;s a full-stack 
-              project built with Nuxt.js (Vue as frontend ; Nitro as backend for the system 
+              project built with Nuxt.js (Vue as frontend ; Nitro as backend for the financial system 
               and Python as backend for the AI chatbot) and tailwind CSS.
             </p>
             <div className="mt-auto pt-4 flex justify-center">
@@ -527,8 +527,8 @@ export default function Home() {
           <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:scale-[1.02] transition flex flex-col">
             <h3 className="text-lg font-semibold">My Portfolio</h3>
             <p className="text-gray-400 mt-2">
-              A personal portfolio website to showcase my skills and projects. It&apos;s a full-stack project built with 
-              Next.js and Tailwind CSS, it features a modern design and responsive 
+              A personal portfolio website to showcase my skills and projects. It&apos;s a project that built with 
+              React.js and Tailwind CSS, it features a modern design and responsive 
               layout to provide an optimal viewing experience across devices.
             </p>
             <div className="mt-auto pt-4 flex justify-center">
