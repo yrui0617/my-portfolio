@@ -280,7 +280,7 @@ export default function Home() {
             <div className="bg-white/5 border border-white/10 backdrop-blur-xl 
                             rounded-2xl p-5 text-center hover:scale-105 transition">
               <p className="text-lg font-medium">Malay</p>
-              <p className="text-xs text-gray-500 mt-1">Intermediate</p>
+              <p className="text-xs text-gray-500 mt-1">Advanced</p>
             </div>
           </div>
         </div>
