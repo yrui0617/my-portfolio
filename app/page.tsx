@@ -251,9 +251,10 @@ export default function Home() {
           <h2 className="text-2xl font-semibold mb-4">About Me</h2>
 
           <p className="text-gray-400 leading-relaxed">
-            I am an IT student currently semester 6 and studying at UUM (Utara University Malaysia), 
-             major is software engineering. Seeking a software engineering related internship (6 months) 
-             that start from 26/9/2026, to gain practical development experience.
+            I am undergraduate student currently in Semester 6 pursuing a Bachelor of Science with Honours (Information
+            Technology), majoring in Software Engineering at Universiti Utara Malaysia. Seeking a 6-month software engineering
+            internship from 21 September 2026 to 22 March 2027 to gain hands-on experience in software development and further
+            enhance technical and problem-solving skills in a professional environment.
           </p>
         </div>
       </section>
