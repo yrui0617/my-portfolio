@@ -334,7 +334,7 @@ export default function Home() {
 
               <div className="flex items-center gap-2 text-gray-400 text-sm mt-1">
                 <CiLocationOn />
-                <span>Utara University Malaysia</span>
+                <span>University Utara Malaysia</span>
               </div>
 
               <p className="text-gray-400 text-sm mt-1">
