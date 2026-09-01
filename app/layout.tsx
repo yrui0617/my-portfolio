@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "A simple portfolio website built with Next.js and Tailwind CSS.",
+  title: "Tan Yin Rui | Software Engineering Portfolio",
+  description:
+    "Tan Yin Rui's portfolio showcasing software engineering, web development, AI applications, and full-stack projects.",
 };
 
 export default function RootLayout({
