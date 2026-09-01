@@ -33,11 +33,10 @@ export const metadata: Metadata = {
       },
     ],
 
-    locale: "en_US",
+    locale: "en_MY",
 
     type: "website",
   },
-};
 };
 
 export default function RootLayout({
