@@ -16,6 +16,28 @@ export const metadata: Metadata = {
   title: "Tan Yin Rui | Software Engineering Portfolio",
   description:
     "Tan Yin Rui's portfolio showcasing software engineering, web development, AI applications, and full-stack projects.",
+  openGraph: {
+    title: "Tan Yin Rui | Software Engineering Portfolio",
+    description:
+      "Software engineering portfolio featuring web development, AI and full-stack projects.",
+    url: "https://my-portfolio-yrui.vercel.app/",
+
+    siteName: "Tan Yin Rui Portfolio",
+
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Tan Yin Rui Portfolio",
+      },
+    ],
+
+    locale: "en_US",
+
+    type: "website",
+  },
+};
 };
 
 export default function RootLayout({
