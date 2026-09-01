@@ -115,7 +115,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 py-4 mt-4 flex justify-between items-center
                         bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl">
 
-          <h1 className="font-semibold tracking-wide">My Portfolio</h1>
+          <h1 className="font-semibold tracking-wide">My Portfolio | Tan Yin Rui</h1>
 
           {/* DESKTOP MENU */}
           <div className="hidden md:flex space-x-6 text-sm text-gray-300">
