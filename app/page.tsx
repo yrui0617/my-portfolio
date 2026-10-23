@@ -343,7 +343,7 @@ export default function Home() {
 
               <div className="flex justify-between gap-4 mt-2">
                 <p className="text-white mt-2">
-                  CGPA (Sem 1-5): 3.80
+                  CGPA (Sem 1-6): 3.81
                 </p>
 
                 <a
@@ -386,7 +386,7 @@ export default function Home() {
 
           <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 mt-6">
             <h3 className="text-lg font-semibold">
-              Dean List Certificate (Semester 2-5)
+              Dean List Certificate (Semester 2-6)
             </h3>
           </div>
         </div>
